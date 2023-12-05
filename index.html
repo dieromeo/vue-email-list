@@ -15,12 +15,14 @@
 
     <div id="app" v-cloak>
         <div class="container">
-            <div class="email-dropdown">
-                <p @click="dropdown">Click to show {{show}} email</p>
+            <h1>Email list</h1>
+            <div class="email-dropdown" @click="dropdown">
+                <h2>Click to show {{show}} email</h2>
             </div>
             <div class="email">
                 <ul v-show="show === 'less'">
-                    <li v-for="email in emails">{{email}}</li>
+                    <li v-for="(email, index) in emails"><span>&#128231;</span>Email {{index + 1}} : {{email}}
+                    </li>
                 </ul>
             </div>
         </div>
